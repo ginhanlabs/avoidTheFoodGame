@@ -14,7 +14,6 @@ public class Door : MonoBehaviour
         SetRandomDoor();
         rb = gameObject.GetComponent<Rigidbody2D>();
         InvokeRepeating("OpenDoor", time, repeatRate);
-        //StartCoroutine(OpenDoor());
     }
 
     private void OpenDoor() {
@@ -22,7 +21,6 @@ public class Door : MonoBehaviour
         bool doorStatus = false;
         
         if (isActive == 1) { doorStatus = true; }
-        Debug.Log("p[en dooe " + " isActive= " + isActive + "   " + doorStatus);
         gameObject.SetActive(doorStatus);
         SetRandomDoor();
     }
