@@ -396,8 +396,8 @@ GameObject:
   - component: {fileID: 735535045}
   - component: {fileID: 735535044}
   m_Layer: 0
-  m_Name: FoodSpawner
-  m_TagString: Untagged
+  m_Name: Food Spawner
+  m_TagString: FoodSpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -426,6 +426,7 @@ MonoBehaviour:
   - 9.5
   - 12.5
   - 15.5
+  gameManager: {fileID: 0}
 --- !u!4 &735535045
 Transform:
   m_ObjectHideFlags: 0

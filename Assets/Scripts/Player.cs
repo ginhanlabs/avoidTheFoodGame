@@ -5,11 +5,15 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float speed;
-   
-    private float minStage = 0.51f;
-    private float maxStage = 17f;
+    public  float speed;
+    private float maxStage;
+    private float maxStage17 = 17f;
+    private float maxStage19 = 21f;
     float defaultSteps = 2.0f;
+
+    void Start() {
+      maxStage = maxStage17;
+    }
 
     void Update()
     {
@@ -20,6 +24,7 @@ public class Player : MonoBehaviour
             }
         };
            
+    
         if (Input.GetKeyDown(KeyCode.LeftArrow) ) {
               if (currentPos - .5 > 0) {
                 transform.Translate(Vector3.left - new Vector3(defaultSteps, 0, 0));

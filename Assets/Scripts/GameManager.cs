@@ -5,25 +5,35 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
     public int score;
+    public bool doorStatus;
     public GameObject[] lives;
     public TextMeshProUGUI scoreText;
     private int health;
-    // private GameObject FoodSpawner;
+
+   private void Awake() {
+        instance = this;   
+    }
 
     void Start()
     {
-        // FoodSpawner = GameObject.Find("Food Spawner");
         health = lives.Length;
         score = 0;
     }
 
     public void  AddScore() {
-        scoreText.text = "Score: " + score++;
+        if (score == 0) {
+            score = 1;
+        } else {
+            score++;
+        }
+        scoreText.text = "Score: " + score;
     }
 
     public void UpdateHealth() { 
-        health--;
+        Debug.Log("in updteHealth");
+            health--;
             if (health >= 0) {
             Debug.Log(health);
             lives[health ].SetActive(false);

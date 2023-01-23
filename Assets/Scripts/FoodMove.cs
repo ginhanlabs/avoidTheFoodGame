@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FoodMove : MonoBehaviour
 {
-    private float lowBoundary = -6.4f;
+    private float lowBoundary = -5.4f;
     public float repeatRate;
 
     void Start()
@@ -16,6 +16,7 @@ public class FoodMove : MonoBehaviour
     {
         transform.position += Vector3.down;
         if (transform.position.y < lowBoundary) {
+            GameManager.instance.AddScore();
             Destroy(gameObject);
         }
     }

@@ -6,12 +6,10 @@ public class FoodSpawner : MonoBehaviour
 {
     public GameObject[] foods;
     public float[] startingPositions;
-    public GameManager gameManager;
     int index;
 
     void Start()
     {
-        // gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         InvokeRepeating("SpawnFood", 1f, 3f);
     }
 
