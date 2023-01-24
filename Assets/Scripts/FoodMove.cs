@@ -16,7 +16,7 @@ public class FoodMove : MonoBehaviour
     {
         transform.position += Vector3.down;
         if (transform.position.y < lowBoundary) {
-            GameManager.instance.AddScore();
+            GameManager.instance.AddScore(1);
             Destroy(gameObject);
         }
     }

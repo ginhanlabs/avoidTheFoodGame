@@ -5,6 +5,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public bool isActive = true;
+    public  bool doorStatus = false;
     private Rigidbody2D rb;
     private float time ;
     private float repeatRate;
@@ -17,10 +18,13 @@ public class Door : MonoBehaviour
     }
 
     private void OpenDoor() {
+        // TODO fix DOOR, player can run throug it.
         int isActive = Random.Range(0, 2);
-        bool doorStatus = false;
+        doorStatus = false;
         
-        if (isActive == 1) { doorStatus = true; }
+        if (isActive == 1) {
+         doorStatus = true; 
+        }
         gameObject.SetActive(doorStatus);
         SetRandomDoor();
     }

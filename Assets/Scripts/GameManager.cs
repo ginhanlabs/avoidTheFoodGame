@@ -6,8 +6,8 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public Door door;
     public int score;
-    public bool doorStatus;
     public GameObject[] lives;
     public TextMeshProUGUI scoreText;
     private int health;
@@ -22,13 +22,9 @@ public class GameManager : MonoBehaviour
         score = 0;
     }
 
-    public void  AddScore() {
-        if (score == 0) {
-            score = 1;
-        } else {
-            score++;
-        }
-        scoreText.text = "Score: " + score;
+    public void  AddScore(int amount) {
+       score += amount;
+       scoreText.text = "Score: " + score;
     }
 
     public void UpdateHealth() { 
@@ -46,5 +42,9 @@ public class GameManager : MonoBehaviour
 
     public void GameOver() {
         Debug.Log("Game Over");
+    }
+
+    public bool GetDoorStatus() {
+        return door.doorStatus;
     }
 }

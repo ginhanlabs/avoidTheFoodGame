@@ -18,6 +18,7 @@ TagManager:
   - Enemy
   - Score
   - FoodSpawner
+  - Door
   layers:
   - Default
   - TransparentFX
